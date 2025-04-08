@@ -1,91 +1,97 @@
-# Fraud-detection-in-Blockchain-using-Machine-Learning
-Project Overview
+# 🪙 Bitcoin Price Prediction using Machine Learning
 
-This project focuses on detecting fraudulent transactions in the Ethereum blockchain using machine learning techniques. By leveraging a labeled Ethereum transaction dataset, the system identifies patterns and characteristics associated with fraudulent activity, helping to improve trust and transparency in blockchain-based platforms such as e-commerce.
+## Introduction
 
-Dataset
+This project focuses on predicting the price of **Bitcoin (BTC-USD)** using machine learning techniques. Utilizing historical data and supervised learning methods, the aim is to forecast future prices based on past trends. This is particularly useful for financial analysts, traders, and researchers exploring crypto markets.
 
-Name: Ethereum Transaction Dataset
+## Files in This Project
 
-Format: .csv
+| Filename         | Description |
+|------------------|-------------|
+| `BTC-USD.xls`    | Historical price data of Bitcoin (Open, High, Low, Close, Volume). |
+| `class.xls`      | Additional labels or classes related to price prediction (possibly indicating price movement or other features). |
+| `Untitled.ipynb` | Main Jupyter Notebook implementing preprocessing, visualization, model training, and prediction. |
 
-Source: Includes both normal and fraudulent transactions
+## Tools & Libraries
 
-Features Include:
+- **Python 3.x**
+- **Jupyter Notebook**
+- **Pandas** – for data manipulation
+- **NumPy** – numerical operations
+- **Matplotlib / Seaborn** – data visualization
+- **Scikit-learn** – machine learning algorithms
+- *(Optional)* TensorFlow/Keras – for deep learning models like LSTM
 
-Average time between sent/received transactions
+## Workflow Overview
 
-Total Ether sent/received
+1. **Data Import & Cleaning**
+   - Load `BTC-USD.xls` and `class.xls`
+   - Handle missing values, data types, formatting
 
-Number of created contracts
+2. **Feature Engineering**
+   - Extract relevant features like moving averages, price change percentage
+   - Merge labels from `class.xls` if applicable
 
-Unique received/sent addresses
+3. **Exploratory Data Analysis**
+   - Visualize trends, volatility, and patterns
 
-ERC20 token features
+4. **Modeling**
+   - Train regression/classification models (e.g., Linear Regression, Random Forest)
+   - Evaluate with metrics like MAE, RMSE, R²
 
-Label: FLAG (0 = Normal, 1 = Fraudulent)
+5. **Prediction**
+   - Forecast future Bitcoin prices using test data
 
-Project Files:
+## How to Run
 
-1.ipynb: Data preprocessing, feature selection, visualization
+1. Clone or download the repository.
 
-2.ipynb: Model training and evaluation (including tuning and ROC analysis)
+2. Make sure you have all dependencies installed:
+   ```bash
+   pip install pandas numpy matplotlib seaborn scikit-learn openpyxl
+Launch the notebook:
 
-transaction_dataset.xls: Original Ethereum transaction dataset
+bash
+Copy
+Edit
+jupyter notebook Untitled.ipynb
+Follow through the steps in the notebook:
 
-boxplots.png: Visual comparison of features (e.g., Created Contracts vs Fraud Flag)
+Load and clean data
 
-correlation_matrix.png: Heatmap of feature correlation
+Run model training
 
-roc_curve_xgb_tuned.png: ROC curve for tuned XGBoost classifier
+Evaluate and plot predictions
 
-Exploratory Data Analysis
+📊 Evaluation Metrics
+MAE (Mean Absolute Error)
 
-Boxplots: Compared how features vary between fraudulent and non-fraudulent transactions
+MSE (Mean Squared Error)
 
-Correlation Matrix: Visualized inter-feature correlation and relation to FLAG
+RMSE (Root Mean Squared Error)
 
-Model:
+R² Score
 
-Algorithm Used: XGBoost Classifier
+📝 Sample Output
+A graph comparing actual vs. predicted Bitcoin prices will be plotted in the notebook to visually evaluate model performance.
 
-Tuning: Hyperparameter tuning performed for better accuracy
+🚀 Future Enhancements
+Integrate LSTM for better time series forecasting
 
-Evaluation Metric: ROC AUC Score
+Add live API for real-time price fetching
 
-Result: AUC = 1.00 (indicating a perfect classifier on this dataset)
+Deploy a dashboard using Streamlit or Flask
 
-Key Insights:
 
-Fraudulent accounts generally have very low interaction metrics.
 
-Most fraudulent transactions do not involve creating contracts or receiving from many unique addresses.
+Email: kumarithik700@gmail.com
 
-Feature correlation with fraud flag is low, indicating non-linear patterns best captured by tree-based models like XGBoost.
 
-Usage:
 
-Clone the repository
+📄 License
+This project is licensed under the MIT License. You are free to use, distribute, and modify it with proper credit.
 
-Install required libraries:
 
-pip install pandas numpy matplotlib seaborn xgboost scikit-learn
 
-Run 1.ipynb for data analysis and visualization
-
-Run 2.ipynb for model training and evaluation
-
-Applications:
-
-E-commerce fraud detection
-
-Smart contract anomaly monitoring
-
-Blockchain forensic analysis
-
-Conclusion: Machine learning can effectively detect fraudulent behavior in blockchain by learning from historical transaction patterns. XGBoost, in particular, provided excellent results with high AUC, demonstrating its suitability for fraud classification tasks in Ethereum-based systems.
-
-Author: Rithik 
-Date: December 2024
 
 
